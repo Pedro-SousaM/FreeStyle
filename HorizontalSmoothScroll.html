@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title> 
+  <style>
+    *{
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    } 
+    body{
+      height: 100%; 
+      overflow:hidden ;
+    }
+    .container{
+      height: 100vh; 
+      width: 100%; 
+      display: flex; 
+      overflow: scroll;
+      transition: 1s;
+    }  
+    .container::-webkit-scrollbar{
+      display: none;
+    }
+    .page{
+      min-width: 100%; 
+      height: 100%; 
+      display: flex;
+      justify-content: center; 
+      align-items: center; 
+      font-size: 50px; 
+      font-family: sans-serif; 
+      color: rgba(30, 28, 28, 0.788); 
+      font-weight: bolder; 
+    } 
+    .page1{
+      background-color: rgb(245, 111, 111); 
+    } 
+    .page2{
+      background-color: aquamarine;
+    } 
+    .page3{
+      background-color: rgb(195, 254, 106)
+    } 
+    .scroll{
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      background-color: aliceblue; 
+      width: 25vw; 
+      height: 4.3px; 
+      border-bottom-right-radius: 20%; 
+      transition: 1s;
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll"></div>
+  <div class="container">
+    <div class="page page1">Page1</div> 
+    <div class="page page2">Page2</div> 
+    <div class="page page3">Page3</div>
+  </div>
+
+
+  <script>
+    const container = document.querySelector(".container") 
+    let scrolline = document.querySelector(".scroll") 
+    container.addEventListener("wheel" , (e)=>{
+      console.log(container.scrollLeft)
+      container.scrollLeft+= e.deltaY 
+      scrolline.style.transform= `translateX(${0.38*container.scrollLeft*(100 / document.documentElement.clientWidth) + "vw"})`
+    }) 
+    container.addEventListener("scroll" , (e)=>{
+      console.log(container.scrollLeft)
+      scrolline.style.transform= `translateX(${0.38*container.scrollLeft*(100 / document.documentElement.clientWidth) + "vw"})`
+    })
+  </script>
+</body>
+</html>

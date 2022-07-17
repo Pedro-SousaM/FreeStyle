@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>carta</title>
+  <style>
+    body{
+    display: flex; 
+    justify-content: center;  
+    align-items: center; 
+    background-color: #1B1811;
+    } 
+    #card{ 
+      transform-style: preserve-3d; 
+      display: flex; 
+      justify-content: center;  
+      transition: 2s; 
+      position: relative; 
+      top: 25vh;
+    }
+    .face{
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+      background-color: rgb(17, 232, 182); 
+      height: 32vh; 
+      width: 25vw;  
+      position: absolute; 
+      border: 3px rgb(0, 0, 0) solid;  
+      transition: 1.5s;  
+      box-shadow: 0px 0px 0px black;
+      border-radius: 2%; 
+      font-size: 150%;
+    } 
+    #front{
+      background-color: #22BFAA ; 
+      transform: rotateY(180deg);
+    }  
+    #back{
+      background-color: #179282; 
+      backface-visibility: hidden; 
+      
+    }
+    .flipF{
+      transform: rotateY(180deg);
+    }  
+    .flipF:hover{
+      transform: translate(1vh, 1vw)
+      rotateY(180deg); 
+      
+    
+    } 
+    .flipB:hover{
+      transform: translate(1vh, 1vw);
+      
+    
+    } 
+    .flipB:hover #front{
+      
+      box-shadow: 10px 10px 5px black;
+    
+    } 
+    .flipF:hover #front{
+      
+      box-shadow: -10px 10px 5px black;
+    
+    } 
+    span{
+      padding: 10px; 
+      display: block; 
+      width: 20vw;
+    }
+    
+
+
+
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <img src="" alt="">
+  <div id="card" class="flipF">
+    
+    <div id="front" class="face">
+    <span id="t1"> How You Doin ?</span>
+    </div>
+    <div id="back" class="face">
+     <span id="t2"> bem vinda ao mundo real. É uma droga. Você vai amar</span>
+    </div> 
+    </div> 
+  <script>
+    const card = document.querySelector("#card") 
+    const front = document.querySelector("#t1") 
+    const back = document.querySelector("#t2")
+    let can = true 
+    let n = 1  
+    card.addEventListener("click", ()=>{  
+      console.log(can)
+      if(can)
+      {
+      if(card.className=="flipF")
+        { 
+        card.className="flipB"  
+        }
+        else{
+        card.className="flipF" 
+         } 
+        if(n==1){ 
+          setTimeout(()=>{front.innerHTML="Você sabe o que é estranho? "}, 1000)
+        } 
+        else if(n==2){ 
+          setTimeout(()=>{back.innerHTML="O Pato Donald nunca usa calças, mas toda vez que sai do chuveiro ele coloca uma toalha na cintura. Quer dizer, para que isso ?"}, 1000)
+        } 
+        n++ 
+        can=false  
+         setTimeout(()=>{can=true} , 1000)
+      
+        }
+      }
+  )  
+      
+
+  </script>
+</body>
+
+</html>

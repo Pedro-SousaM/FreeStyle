@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let numB = 1  /*é o número Base para iniciar a progressão*/ 
+       let numGbase = 1  
+       let numGnext = numGbase+2  /*quanto o próximo número ao cubo vai ter crescido em relação ao atual*/
+       
+       for (var vez= 1; vez<=100; vez++ )
+       { 
+       
+        console.log(`${vez} ao quadrado é ${numB}`) 
+        numB = numB+numGnext /*queremos que o número base seja (vez+1)³ entenda numB como vez³ e numGnext como (vez+1)³-vez³, chegaremos em (vez+1)³ assim*/
+        numGbase= numGnext /* essas duas ultimas linhas são atualizando a velocidade da progressão*/
+        numGnext= numGbase+2 
+       } 
+    </script>
+</body>
+</html>

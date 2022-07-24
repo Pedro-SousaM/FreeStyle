@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       var alunos = ["aluno1","aluno2","aluno3","aluno4","aluno5"]  
+       var notas =  [3,8,9,2,6,9,10,3,6,1,] 
+       var media = (n1, n2)=>{ 
+               return (n1+n2)/2
+       }  
+       var aprovacao = ()=>{
+        if(media(notas[0], notas[1])>=6){return "aprovado"}else{ return "reprovado"}
+       }  
+       for(var numero = 0; numero<alunos.length; numero++) { 
+        
+        console.log(`${alunos[numero]}, suas notas foram ${notas[0]} e ${notas[1]}, com uma média de ${media(notas[0], notas[1])} você foi ${aprovacao()}`  ) 
+        notas.splice(0,2)  
+        }
+
+    </script>
+</body>
+</html>

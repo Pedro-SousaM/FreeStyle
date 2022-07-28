@@ -13,5 +13,4 @@ menu1.addEventListener("mouseout", ()=>{
     op.forEach(op => op.style.transform="translateX(-50px)") 
   }) 
   
-  list.forEach(list=>{list.addEventListener("click", ()=>{
-    console.log("cu")})})
+ 

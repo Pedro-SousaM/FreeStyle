@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let users = ["Obi-wan", "Cal Kestis", "Padmé", "Darth Sidious"]
+
+        function transformUser(name1, name2) {
+            index = users.indexOf(name1)
+            users[index] = name2
+        }
+        function CallUsers() {
+            console.log(users)
+        }
+        function AddUser(name) {
+            let promise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    users.push(name)
+                    let error = false
+                    if (!error) {
+                        resolve()
+                    }
+                    else { reject("Something is disturbing the balance of force") }
+                }, 1000)
+
+            })
+            return promise
+        }
+        AddUser("Anakin").then(e => { transformUser("Anakin", "Lord Vader") }).then(CallUsers)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+    
+    </style>
+</head>
+
+<body>
+    <script>
+      function Nforce(nome, status){
+        return {nome, status}
+      }  
+      let users = [
+        Nforce("Darth Vader", "Strong"), 
+        Nforce("Fimose", "Weak"), 
+        Nforce("Mace Windu", "Strong"), 
+        Nforce("Yoda", "Strong"), 
+        Nforce("Jedi Figurante", "Weak")
+      ]  
+      function ForceFilter(force, nivel){ 
+        if(force.status==nivel){
+            return true
+        }else{return false}
+
+      }
+      let WeakUsers= users.filter((e)=>{
+        if(ForceFilter(e,"Weak"))
+        {return true}
+        else{return false}}) 
+
+        let StrongUsers= users.filter((e)=>{
+        if(ForceFilter(e,"Strong"))
+        {return true}
+        else{return false}})
+        
+        console.log(WeakUsers) 
+        console.log(StrongUsers)      
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+    
+    </style>
+</head>
+
+<body> 
+  <h1>GEO localização !</h1>  
+  <div id="location"></div>
+  <button id="button">descubra !</button>
+    <script>
+     let button = document.querySelector("#button") 
+     let loc = document.querySelector("#location")
+     
+     button.addEventListener("click", (e)=>{
+        navigator.geolocation.getCurrentPosition(getPosition)
+      }) 
+     
+      function getPosition(position){
+        loc.innerHTML=`latitude:${position.coords.latitude}<br> longitude:${position.coords.longitude}`
+      }
+      
+      
+      
+    </script>
+</body>
+
+</html>

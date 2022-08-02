@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.GContainer {
+    width: 600px;
+    height: 600px;
+    background-color: blue;
+
+    justify-items: baseline;
+    transform: translateY(25%);
+}
+
+.retangle {
+    height: 33.33%;
+    width: 100%;
+    background-color: green;
+    display: flex;
+}
+
+.square {
+    height: 95%;
+    width: 33.3%;
+    margin: 2%;
+    position: relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+
+}
+
+.square:hover {
+    transform: translate(5px, -10px) rotateY(180deg);
+
+}
+
+.face {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: 1s;
+}
+
+.flip .face {
+    transform: rotateY(180deg);
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.front {
+    background-color: gold;
+
+}
+
+.back {
+    background-color: aqua;
+    backface-visibility: hidden;
+
+}

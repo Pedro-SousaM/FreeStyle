@@ -6,7 +6,9 @@ let squareAll_5 = Array.from(document.querySelectorAll(".f5"))
 let squareAll_V1 = Array.from(document.querySelectorAll(".v1"))
 let squareAll_V2 = Array.from(document.querySelectorAll(".v2"))
 let squareAll_V3 = Array.from(document.querySelectorAll(".v3")) 
-let wincard = document.querySelector(".wincard") 
+let wincard = document.querySelector(".wincard")   
+let PlayAgain = document.querySelector(".refresh")
+let GameOver = 0
 let n = 1
 let player = ""
 let can = true
@@ -18,18 +20,24 @@ function ref()
         console.log(221)
     }
 function win(player) {
-    if (can) {
-        blu.className= "blur "+blu.className 
-        wincard.innerHTML=`<span>${player} wins !`+ wincard.innerHTML
-        wincard.className= wincard.className+ " winposition"
-        can = false
+   blu.className= "blur "+blu.className
+   wincard.className= wincard.className+ " winposition"    
+   PlayAgain.className= PlayAgain.className + " winposition2"
+   if (can) {
+        wincard.innerHTML=`<span>${player} wins ! ${wincard.innerHTML}` 
+        can = false 
     }
+} 
+function Gameover(){
+    wincard.innerHTML=`<span>   Game Over !`  
+    wincard.className= wincard.className+ " winposition"    
+    PlayAgain.className= PlayAgain.className + " winposition2"
 }
 
 function verificar(square, list, xlist, opxlist, vlist1, vlist2, vlist3) {
     square.addEventListener("click", () => {  
-        if (square.n == undefined) {
-            
+        if (square.n == undefined) { 
+            GameOver++
             if (n == "1") {
                 square.children[1].innerHTML = '<img src="https://i.ibb.co/18DTn3L/x.png" border="0" height="100%" width="100%">'
                 n = 0
@@ -52,7 +60,9 @@ function verificar(square, list, xlist, opxlist, vlist1, vlist2, vlist3) {
                 vlist2[0].className == vlist2[1].className && vlist2[1].className == vlist2[2].className ||
                 vlist3[0].className == vlist3[1].className && vlist3[1].className == vlist3[2].className) {
                 win(player) 
-            } 
+            }else if(GameOver==9){
+                Gameover()
+            }
           
         }
     })
@@ -60,4 +70,4 @@ function verificar(square, list, xlist, opxlist, vlist1, vlist2, vlist3) {
 squareAll_1.forEach((e) => { verificar(e, squareAll_1, squareAll_4, squareAll_5, squareAll_V1, squareAll_V2, squareAll_V3) })
 squareAll_2.forEach((e) => { verificar(e, squareAll_2, squareAll_4, squareAll_5, squareAll_V1, squareAll_V2, squareAll_V3) })
 squareAll_3.forEach((e) => { verificar(e, squareAll_3, squareAll_4, squareAll_5, squareAll_V1, squareAll_V2, squareAll_V3) }) 
-wincard.addEventListener("click", ref)
+PlayAgain.addEventListener("click", ref)

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 700px;
+            height: 600px;
+            display: flex;
+
+            background-color: bisque;
+            resize: both;
+            overflow: auto;
+        }
+
+        .content {
+            width: calc(0.3*700px);
+            height: 30%;
+            transition: 1.2s; 
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">1</div>
+        <div class="content" id="xx">2</div>
+        <div class="content">3</div>
+        <div class="content">4</div>
+    </div>
+    <script>
+        let cards = Array.from(document.querySelectorAll(".content"))
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF'
+            var color = '#'
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)]
+            }
+            return color;
+        }
+        cards.forEach(function (card) {
+            card.style.backgroundColor = getRandomColor()
+            card.addEventListener("mouseover", () => {
+                card.style.flexShrink = 0
+            })  
+            card.addEventListener("mouseleave", () => {
+                card.style.flexShrink = 1
+            }) 
+        })
+
+
+    </script>
+</body>
+
+</html>

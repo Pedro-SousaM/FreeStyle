@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numb1 = 1450 
+        let numb2 = 1000
+        let nnow = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263]
+        let pcount = 0
+        let count = 1 
+        function escrever(n1,n2,now){
+           return console.log(`${n1},${n2}|${now}`)
+        }
+       do{if ((numb1 / nnow[pcount]) % 1 == 0||(numb2 / nnow[pcount]) % 1 == 0) {
+                eval(` n${count} = ${nnow[pcount]}`)
+                escrever(numb1, numb2, nnow[pcount])
+                if((numb1 / nnow[pcount]) % 1 == 0){numb1=numb1/nnow[pcount]}
+                if((numb2 / nnow[pcount]) % 1 == 0){numb2=numb2/nnow[pcount]}
+            } else {
+                pcount++
+            }}while(numb1!=1||numb2!=1) 
+            escrever(numb1, numb2, 1) 
+    </script>
+</body>
+
+</html>

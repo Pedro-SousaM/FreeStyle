@@ -1,32 +1,473 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            user-select: none;
+        }
+
+        :root {
+            --containerTop: 450px;
+        }
+
+        body {
+            background-color: #12161f;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tittle {
+            color: whitesmoke;
+            font-size: 50px;
+            display: block;
+            position: absolute;
+            top: 80px; 
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            position: relative;
+            margin: 40px;
+            top: 140px;
+            width: 180px;
+            height: 54px;
+            font-size: 40px;
+            display: flex;
+            padding-left: 10px;
+            border-radius: 5px;
+            border: 3px solid rgba(0, 0, 0, 0.736);
+            color: rgba(223, 245, 247, 0.702);
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgba(112, 134, 201, 0.658);
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        input::placeholder {
+            color: rgba(240, 248, 255, 0.784);
+        }
+
+        .container {
+            position: absolute;
+            background-color: #273553b4;
+            top: var(--containerTop);
+            width: 60vw;
+            height: 240vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            border-radius: 10px;
+            border: 3px solid rgba(0, 0, 0, 0.64);
+        }
+
+        .container2 {
+            position: absolute;
+            background-color: transparent;
+            top: var(--containerTop);
+            width: 60vw;
+            height: 240vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .container3 {
+            position: absolute;
+            background-color: transparent;
+            top: var(--containerTop);
+            width: 60vw;
+            height: 240vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+
+        .nspace {
+            position: relative;
+            height: 14vh;
+            width: 15vw;
+            top: -3px;
+            left: 30px;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(187, 223, 255);
+        }
+
+        .n2space {
+            height: 14vh;
+            width: 15vw;
+            margin: 10px;
+            position: relative;
+            left: 20vw;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(187, 223, 255);
+        }
+
+        .n3space {
+            height: 14vh;
+            width: 15vw;
+            margin: 10px;
+            position: relative;
+            left: 40vw;
+            font-size: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(187, 223, 255);
+        }
+
+        .vline {
+            position: absolute;
+            left: 39.5vw;
+            top: 3vh;
+            height: 210vh;
+            width: 0.2vw;
+            background-color: rgba(84, 108, 129, 0.623);
+            border-radius: 3px;
+        }
+
+        .raiz1 {
+            width: 50vw;
+            height: 7vh;
+            position: absolute;
+            top: 270px;
+            left: 500px;
+            font-size: 35px;
+            display: flex;
+            align-items: center;
+            color: rgb(187, 223, 255);
+        }
+
+        .raiz2 {
+            width: 50vw;
+            height: 7vh;
+            position: absolute;
+            top: 327px;
+            left: 500px;
+            font-size: 35px;
+            display: flex;
+            align-items: center;
+            color: rgb(187, 223, 255);
+        }
+
+        .mmc {
+            width: 50vw;
+            height: 7vh;
+            position: absolute;
+            top: 380px;
+            left: 500px;
+            font-size: 35px;
+            display: flex;
+            align-items: center;
+            color: rgb(187, 223, 255);
+        } 
+        .like{
+            background-color: rgba(84, 108, 129, 0.623);
+            width: 270px; 
+            border-radius: 3px;
+            height: 60px; 
+            padding: 15px;
+            position: absolute;
+            top: 290px;
+            left: 810px;
+            font-size: 35px; 
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            color: rgb(187, 223, 255); 
+            cursor: pointer; 
+            transition: 1s;
+        } 
+        .Lbutton{ 
+            position: absolute;
+            width: 60px; 
+            top: 68px; 
+            left: 270px; 
+            transition: 0.4s;
+        } 
+        .Lcounter{ 
+            color: rgb(187, 223, 255);
+            height: 60px; 
+            width: 60px;
+            position: absolute;
+            width: 60px; 
+            top: 77px; 
+            left: 325px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="tittle">Calcule mmc e raizes</div>
+    <div class="container">
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="vline"></div>
+
+    </div>
+    <div class="container2">
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+    </div>
+    <div class="container3">
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+    </div>
+    <input type="number" placeholder="valor 1" class="n1">
+    <input type="button" value="Calcular" class="button">
+    <input type="number" placeholder="valor 2" class="n2" value="1">
+    <div class="raiz1"></div>
+    <div class="raiz2"></div>
+    <div class="mmc"></div>
+    <div class="like">Like para mais ! <div class="Lcounter"></div><img class="Lbutton"src="https://www.freepnglogos.com/uploads/like-png/like-png-facebook-logo-transparent-png-pictures-icons-and-15.png" width="200" alt="" /></div>
     <script>
-        let numb1 = 1450 
-        let numb2 = 1000
-        let nnow = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263]
-        let pcount = 0
-        let count = 1 
-        function escrever(n1,n2,now){
-           return console.log(`${n1},${n2}|${now}`)
-        }
-       do{if ((numb1 / nnow[pcount]) % 1 == 0||(numb2 / nnow[pcount]) % 1 == 0) {
-                eval(` n${count} = ${nnow[pcount]}`)
-                escrever(numb1, numb2, nnow[pcount])
-                if((numb1 / nnow[pcount]) % 1 == 0){numb1=numb1/nnow[pcount]}
-                if((numb2 / nnow[pcount]) % 1 == 0){numb2=numb2/nnow[pcount]}
+        let input1 = document.querySelector(".n1")
+        let input2 = document.querySelector(".n2")
+        let button = document.querySelector(".button") 
+        let Lbutton = document.querySelector(".like") 
+        let Limg = document.querySelector(".Lbutton")  
+        let Lcounter = document.querySelector(".Lcounter")
+        let Lcount = window.localStorage.getItem("lcount") 
+            Lcounter.innerHTML=`+${Lcount}`
+        Lbutton.addEventListener("mouseenter", () => {
+            Lbutton.style.backgroundColor = "rgba(191, 217, 220, 0.702)"
+            Lbutton.style.color = "rgb(187, 223, 255)"
+            Lbutton.style.boxShadow = "0px 0px 10px rgba(169, 212, 106, 0.695)"
+        }) 
+        Lbutton.addEventListener("mouseleave", () => {
+            Lbutton.style.backgroundColor = "rgba(112, 134, 201, 0.658)"
+            Lbutton.style.color = "rgba(191, 217, 220, 0.702)"
+            Lbutton.style.boxShadow = "none"
+        }) 
+        Lbutton.addEventListener("click", () => {
+            setTimeout(() => { Lbutton.style.transform = "translate(-1px, -1px)" }, 100)
+            Lbutton.style.transition = "0.1s"
+            Lbutton.style.transform = "translate(1px, 1px)"
+            setTimeout(() => { Lbutton.style.transition = "1s" }, 200) 
+            Lcount++
+            Lcounter.innerHTML=`+${Lcount}` 
+            window.localStorage.setItem("lcount", Lcount) 
+            Limg.style.transform= "rotateZ(30deg)"  
+            Limg.style.width="65px"
+            setTimeout(()=>{
+                Limg.style.transform= "rotateZ(-10deg)" 
+                Limg.style.width="60px"
+            }, 300)
+        })
+        button.addEventListener("mouseenter", () => {
+            button.style.backgroundColor = "rgba(191, 217, 220, 0.702)"
+            button.style.color = "rgba(44, 66, 69, 0.702)"
+            button.style.boxShadow = "0px 0px 10px rgba(169, 212, 106, 0.695)"
+        }) 
+        button.addEventListener("mouseleave", () => {
+            button.style.backgroundColor = "rgba(112, 134, 201, 0.658)"
+            button.style.color = "rgba(191, 217, 220, 0.702)"
+            button.style.boxShadow = "none"
+        }) 
+        button.addEventListener("click", () => {
+            setTimeout(() => { button.style.transform = "translate(-1px, -1px)" }, 100)
+            button.style.transition = "0.1s"
+            button.style.transform = "translate(1px, 1px)"
+            setTimeout(() => { button.style.transition = "1s" }, 200)
+            if (input1.value != "" && input2.value != "" && input1.value != 0 && input2.value != 0) {
+                factorization()
+            }
+        })
+
+
+        let n1place = document.querySelectorAll(".nspace")
+        let n2place = document.querySelectorAll(".n2space")
+        let n3place = document.querySelectorAll(".n3space")
+        let r1place = document.querySelector(".raiz1")
+        let r2place = document.querySelector(".raiz2")
+        let mmcplace = document.querySelector(".mmc") 
+
+        function factorization() {
+
+            let numb1 = input1.value
+            let numb1f = numb1
+            let numb2 = input2.value
+            let numb2f = numb2
+            let max = Math.max(numb1, numb2)
+            console.log(max)
+            let nnow = []
+            let pcount = 0
+            let count = 0
+            let Ncount = 0 
+            let mmc = 1
+            let n1 = []
+            let n2 = []
+            let n = []
+            let raiz1 = 1
+            let raiz2 = 1
+            let raizD1 = 1
+            let raizD2 = 1
+            let num = 2
+            let numc = 0
+            let optimize = 2
+            function pushPrim(n1, n2) {
+                if (n1 > 1000) {
+                    optimize = 3
+                }
+                if (n1 > 10000) {
+                    optimize = 4
+                }
+                if (n1 >= 100000) {
+                    optimize = numb1 / 4000
+                }
+                if (n1 >= 400000) {
+                    optimize = numb1 / 5000
+                }
+                for (num = 2; num <= n1 / optimize; num++) {
+                    numc = 0
+                    count = 2
+                    for (count; count <= num; count++) {
+                        if (num % count == 0) {
+                            numc++
+                        }
+                    }
+                    if (numc == 1) { nnow.push(num) }
+                }
+            }
+
+            function escrever(n1, n2, now, counter) {
+                n1place[counter].innerHTML = `${n1}`
+                n2place[counter].innerHTML = `${n2}`
+                n3place[counter].innerHTML = `${now}`
+            }
+            for (var x = 0; 12 > x; x++) {
+                n1place[x].innerHTML = ``
+                n2place[x].innerHTML = ``
+                n3place[x].innerHTML = ``
+            }
+
+            pushPrim(max)
+            console.log(nnow)
+            do {
+                nnow.push(numb1)
+                nnow.push(numb2)
+                if (nnow[pcount] == numb1) {
+                    pushPrim(numb1)
+                }
+                if (nnow[pcount] == numb2) {
+                    pushPrim(numb2)
+                }
+                if ((numb1 / nnow[pcount]) % 1 == 0 || (numb2 / nnow[pcount]) % 1 == 0) {
+                    n.push(nnow[pcount])
+                    escrever(numb1, numb2, nnow[pcount], Ncount)
+                    Ncount++
+                    if ((numb1 / nnow[pcount]) % 1 == 0) { numb1 = numb1 / nnow[pcount]; n1.push(nnow[pcount]) }
+                    if ((numb2 / nnow[pcount]) % 1 == 0) { numb2 = numb2 / nnow[pcount]; n2.push(nnow[pcount]) }
+                } else {
+                    pcount++
+                }
+                console.log(Ncount)
+            }
+            while (numb1 != 1 || numb2 != 1)
+            escrever(numb1, numb2, "", Ncount)
+            for (x = 0; Ncount > x; x++) {
+                mmc = Number(n[x]) * mmc
+            }
+
+            let grupos1 = n1.reduce(function (acumulador, numero) {
+                if (acumulador.length === 0 || acumulador[acumulador.length - 1][0] !== numero) {
+                    acumulador.push([numero]);
+                } else {
+                    acumulador[acumulador.length - 1].push(numero);
+                }
+                return acumulador;
+            }, []);
+
+            let grupos2 = n2.reduce(function (acumulador, numero) {
+                if (acumulador.length === 0 || acumulador[acumulador.length - 1][0] !== numero) {
+                    acumulador.push([numero]);
+                } else {
+                    acumulador[acumulador.length - 1].push(numero);
+                }
+                return acumulador;
+            }, []);
+
+            raiz = 1
+            raizD = 1
+
+            for (x = 0; (grupos1.length) > x; x++) {
+                if (grupos1[x].length % 2 != 0 && grupos1[x].length != 1) {
+                    raiz1 = raiz1 * grupos1[x][0] ** ((grupos1[x].length - 1) / 2)
+                    raizD1 = raizD1 * grupos1[x][0]
+                } else if (grupos1[x].length % 2 == 0 && grupos1[x].length != 1) {
+                    raiz1 = raiz1 * grupos1[x][0] ** (Number((grupos1[x].length)) / 2)
+                } else {
+                    raizD1 = raizD1 * grupos1[x][0]
+                }
+            }
+
+            for (x = 0; (grupos2.length) > x; x++) {
+                if (grupos2[x].length % 2 != 0 && grupos2[x].length != 1) {
+                    raiz2 = raiz2 * grupos2[x][0] ** ((grupos2[x].length - 1) / 2)
+                    raizD2 = raizD2 * grupos2[x][0]
+                } else if (grupos2[x].length % 2 == 0 && grupos2[x].length != 1) {
+                    raiz2 = raiz2 * grupos2[x][0] ** (Number((grupos2[x].length)) / 2)
+                } else {
+                    raizD2 = raizD2 * grupos2[x][0]
+                }
+            }
+
+            if (raiz1 == 1) {
+                r1place.innerHTML = `A raiz de ${numb1f} é √${raizD1}`
+            } else if (raizD1 == 1) {
+                r1place.innerHTML = `A raiz de ${numb1f} é ${raiz1}`
             } else {
-                pcount++
-            }}while(numb1!=1||numb2!=1) 
-            escrever(numb1, numb2, 1) 
+                r1place.innerHTML = `A raiz de ${numb1f} é ${raiz1}√${raizD1}`
+            }
+            if (raiz2 == 1) {
+                r2place.innerHTML = `A raiz de ${numb2f} é √${raizD2}`
+            } else if (raizD2 == 1) {
+                r2place.innerHTML = `A raiz de ${numb2f} é ${raiz2}`
+            } else {
+                r2place.innerHTML = `A raiz de ${numb2f} é ${raiz2}√${raizD2}`
+            }
+            mmcplace.innerHTML = `O mmc é ${mmc}`
+        }
     </script>
 </body>
 

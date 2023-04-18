@@ -26,7 +26,7 @@
             font-size: 50px;
             display: block;
             position: absolute;
-            top: 80px; 
+            top: 80px;
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -57,7 +57,7 @@
             background-color: #273553b4;
             top: var(--containerTop);
             width: 60vw;
-            height: 240vh;
+            height: 380vh;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -70,7 +70,7 @@
             background-color: transparent;
             top: var(--containerTop);
             width: 60vw;
-            height: 240vh;
+            height: 380vh;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -81,7 +81,7 @@
             background-color: transparent;
             top: var(--containerTop);
             width: 60vw;
-            height: 240vh;
+            height: 380vh;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -130,7 +130,7 @@
             position: absolute;
             left: 39.5vw;
             top: 3vh;
-            height: 210vh;
+            height: 370vh;
             width: 0.2vw;
             background-color: rgba(84, 108, 129, 0.623);
             border-radius: 3px;
@@ -170,39 +170,76 @@
             display: flex;
             align-items: center;
             color: rgb(187, 223, 255);
-        } 
-        .like{
+        }
+
+        .like {
             background-color: rgba(84, 108, 129, 0.623);
-            width: 270px; 
+            width: 270px;
             border-radius: 3px;
-            height: 60px; 
+            height: 60px;
             padding: 15px;
             position: absolute;
             top: 290px;
             left: 810px;
-            font-size: 35px; 
+            font-size: 35px;
             font-family: Arial, Helvetica, sans-serif;
             display: flex;
             align-items: center;
-            color: rgb(187, 223, 255); 
-            cursor: pointer; 
-            transition: 1s;
-        } 
-        .Lbutton{ 
-            position: absolute;
-            width: 60px; 
-            top: 68px; 
-            left: 270px; 
-            transition: 0.4s;
-        } 
-        .Lcounter{ 
             color: rgb(187, 223, 255);
-            height: 60px; 
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        .Lbutton {
+            position: absolute;
+            width: 60px;
+            top: 68px;
+            left: 270px;
+            transition: 0.4s;
+        }
+
+        .Lcounter {
+            color: rgb(187, 223, 255);
+            height: 60px;
             width: 60px;
             position: absolute;
-            width: 60px; 
-            top: 77px; 
+            width: 60px;
+            top: 77px;
             left: 325px;
+        }
+
+        @keyframes elogio {
+            0% {
+                opacity: 0;
+            }
+
+            33% {
+                left: 170px;
+                opacity: 0.7;
+            }
+
+            66% {
+
+                left: 238px;
+            }
+
+            99% {
+                top: -87px;
+                left: 220px;
+            }
+
+        }
+
+        .elogioPravc {
+            color: rgb(187, 223, 255);
+            height: 60px;
+            width: 520px;
+            position: absolute;
+            top: 65px;
+            left: 125px;
+            animation-name: elogio;
+            opacity: 0;
+            animation-duration: 4.4s;
         }
     </style>
 </head>
@@ -218,12 +255,19 @@
         <div class="nspace"></div>
         <div class="nspace"></div>
         <div class="nspace"></div>
+        <div class="nspace"></div> 
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
+        <div class="nspace"></div>
         <div class="nspace"></div>
         <div class="nspace"></div>
         <div class="nspace"></div>
         <div class="nspace"></div>
         <div class="vline"></div>
-
     </div>
     <div class="container2">
         <div class="n2space"></div>
@@ -237,13 +281,29 @@
         <div class="n2space"></div>
         <div class="n2space"></div>
         <div class="n2space"></div>
+        <div class="n2space"></div> 
         <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div>
+        <div class="n2space"></div> 
     </div>
     <div class="container3">
         <div class="n3space"></div>
         <div class="n3space"></div>
         <div class="n3space"></div>
         <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>
+        <div class="n3space"></div>   
         <div class="n3space"></div>
         <div class="n3space"></div>
         <div class="n3space"></div>
@@ -259,57 +319,88 @@
     <div class="raiz1"></div>
     <div class="raiz2"></div>
     <div class="mmc"></div>
-    <div class="like">Like para mais ! <div class="Lcounter"></div><img class="Lbutton"src="https://www.freepnglogos.com/uploads/like-png/like-png-facebook-logo-transparent-png-pictures-icons-and-15.png" width="200" alt="" /></div>
+    <div class="like">Like para mais !
+        <div class="elogioPravc"></div>
+        <div class="Lcounter"></div>
+        <img class="Lbutton"
+            src="https://www.freepnglogos.com/uploads/like-png/like-png-facebook-logo-transparent-png-pictures-icons-and-15.png"
+            width="200" alt="" />
+    </div>
     <script>
         let input1 = document.querySelector(".n1")
         let input2 = document.querySelector(".n2")
-        let button = document.querySelector(".button") 
-        let Lbutton = document.querySelector(".like") 
-        let Limg = document.querySelector(".Lbutton")  
+        let button = document.querySelector(".button")
+        let Lbutton = document.querySelector(".like")
+        let Limg = document.querySelector(".Lbutton")
         let Lcounter = document.querySelector(".Lcounter")
-        let Lcount = window.localStorage.getItem("lcount") 
-            Lcounter.innerHTML=`+${Lcount}`
-        Lbutton.addEventListener("mouseenter", () => {
+        let Lcount = window.localStorage.getItem("lcount")
+        if(Lcount!=null){ Lcounter.innerHTML = `+${Lcount}`} 
+        else(Lcount="")
+        let div = ""
+        let div0 = document.createElement('div') 
+        let div1 = document.createElement('div') 
+        let div2 = document.createElement('div') 
+        let div3 = document.createElement('div')
+        let choosediv = 0
+        function choice(count){
+            if(choosediv>3){
+                choosediv=0
+            }  
+            div=eval(`div${choosediv}`)
+            div.innerHTML = elogios[elogCount]
+            div.setAttribute("class", "elogioPravc")
+            document.querySelector(".like").appendChild(div)
+            div.style.left = `${Math.random() * 350}px`    
+            choosediv++ 
+            if(elogCount<elogios.length-1){elogCount++} 
+        } 
+        
+        let elogios = ["você é um ótimo professor !"]
+            
+        let elogCount = 0
+            Lbutton.addEventListener("mouseenter", () => {
             Lbutton.style.backgroundColor = "rgba(191, 217, 220, 0.702)"
             Lbutton.style.color = "rgb(187, 223, 255)"
             Lbutton.style.boxShadow = "0px 0px 10px rgba(169, 212, 106, 0.695)"
-        }) 
+        })
         Lbutton.addEventListener("mouseleave", () => {
             Lbutton.style.backgroundColor = "rgba(112, 134, 201, 0.658)"
             Lbutton.style.color = "rgba(191, 217, 220, 0.702)"
             Lbutton.style.boxShadow = "none"
-        }) 
+        })
         Lbutton.addEventListener("click", () => {
             setTimeout(() => { Lbutton.style.transform = "translate(-1px, -1px)" }, 100)
             Lbutton.style.transition = "0.1s"
             Lbutton.style.transform = "translate(1px, 1px)"
-            setTimeout(() => { Lbutton.style.transition = "1s" }, 200) 
+            setTimeout(() => { Lbutton.style.transition = "1s" }, 200)
             Lcount++
-            Lcounter.innerHTML=`+${Lcount}` 
-            window.localStorage.setItem("lcount", Lcount) 
-            Limg.style.transform= "rotateZ(30deg)"  
-            Limg.style.width="65px"
-            setTimeout(()=>{
-                Limg.style.transform= "rotateZ(-10deg)" 
-                Limg.style.width="60px"
+            Lcounter.innerHTML = `+${Lcount}`
+            window.localStorage.setItem("lcount", Lcount)
+            Limg.style.transform = "rotateZ(30deg)"
+            Limg.style.width = "65px"
+            setTimeout(() => {
+                Limg.style.transform = "rotateZ(-10deg)"
+                Limg.style.width = "60px"
             }, 300)
-        })
+     
+            choice(choosediv)
+        }) 
         button.addEventListener("mouseenter", () => {
             button.style.backgroundColor = "rgba(191, 217, 220, 0.702)"
             button.style.color = "rgba(44, 66, 69, 0.702)"
             button.style.boxShadow = "0px 0px 10px rgba(169, 212, 106, 0.695)"
-        }) 
+        })
         button.addEventListener("mouseleave", () => {
             button.style.backgroundColor = "rgba(112, 134, 201, 0.658)"
             button.style.color = "rgba(191, 217, 220, 0.702)"
             button.style.boxShadow = "none"
-        }) 
+        })
         button.addEventListener("click", () => {
             setTimeout(() => { button.style.transform = "translate(-1px, -1px)" }, 100)
             button.style.transition = "0.1s"
             button.style.transform = "translate(1px, 1px)"
             setTimeout(() => { button.style.transition = "1s" }, 200)
-            if (input1.value != "" && input2.value != "" && input1.value != 0 && input2.value != 0) {
+            if (input1.value != "" && input2.value != "" && input1.value != 0 && input2.value != 0&&( input1.value < 0 && input2.value < 0)||( input1.value > 0 && input2.value > 0)  ) {
                 factorization()
             }
         })
@@ -320,7 +411,7 @@
         let n3place = document.querySelectorAll(".n3space")
         let r1place = document.querySelector(".raiz1")
         let r2place = document.querySelector(".raiz2")
-        let mmcplace = document.querySelector(".mmc") 
+        let mmcplace = document.querySelector(".mmc")
 
         function factorization() {
 
@@ -333,7 +424,7 @@
             let nnow = []
             let pcount = 0
             let count = 0
-            let Ncount = 0 
+            let Ncount = 0
             let mmc = 1
             let n1 = []
             let n2 = []
@@ -353,10 +444,10 @@
                     optimize = 4
                 }
                 if (n1 >= 100000) {
-                    optimize = numb1 / 4000
+                    optimize = n1/ 4000
                 }
                 if (n1 >= 400000) {
-                    optimize = numb1 / 5000
+                    optimize = n1 / 5000
                 }
                 for (num = 2; num <= n1 / optimize; num++) {
                     numc = 0
@@ -384,8 +475,8 @@
             pushPrim(max)
             console.log(nnow)
             do {
-                nnow.push(numb1)
-                nnow.push(numb2)
+               if(numb1!=1&&numb1<nnow[pcount]){ nnow.push(numb1)}
+               if(numb2!=1&&numb2<nnow[pcount]){ nnow.push(numb2)} 
                 if (nnow[pcount] == numb1) {
                     pushPrim(numb1)
                 }

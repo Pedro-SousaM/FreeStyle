@@ -415,9 +415,9 @@
 
         function factorization() {
 
-            let numb1 = input1.value
+            let numb1 = Number(input1.value)
             let numb1f = numb1
-            let numb2 = input2.value
+            let numb2 = Number(input2.value)
             let numb2f = numb2
             let max = Math.max(numb1, numb2)
             console.log(max)
@@ -435,7 +435,7 @@
             let raizD2 = 1
             let num = 2
             let numc = 0
-            let optimize = 2
+            let optimize = 1
             function pushPrim(n1, n2) {
                 if (n1 > 1000) {
                     optimize = 3
@@ -473,10 +473,9 @@
             }
 
             pushPrim(max)
-            console.log(nnow)
             do {
-               if(numb1!=1&&numb1<nnow[pcount]){ nnow.push(numb1)}
-               if(numb2!=1&&numb2<nnow[pcount]){ nnow.push(numb2)} 
+               if(numb1!=1&&numb1<=nnow[pcount]){ nnow.push(numb1)} 
+               if(numb1!=1&&numb2<=nnow[pcount]){ nnow.push(numb2)}
                 if (nnow[pcount] == numb1) {
                     pushPrim(numb1)
                 }
@@ -492,7 +491,6 @@
                 } else {
                     pcount++
                 }
-                console.log(Ncount)
             }
             while (numb1 != 1 || numb2 != 1)
             escrever(numb1, numb2, "", Ncount)

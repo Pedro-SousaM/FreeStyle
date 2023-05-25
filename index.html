@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <style> 
+    :root{
+        --border:9px;
+    }
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(5, 7, 20); 
+            
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            position: absolute;
+            top: 10vh;
+            width: 70vw;
+            max-width: 800px;
+            border: black 2px solid;
+            border-radius: 13px;
+            height: 86vh;
+            background-color: green;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        .column {
+            display: flex;
+            width: 100%;
+            height: 25%;
+            background-color: rgba(43, 49, 226, 0.567);
+        }
+
+        .a1 {
+            font-size: 50PX;
+            padding-left: 4vw;
+            box-sizing: border-box;
+            align-items: center; 
+            border-top-right-radius: var(--border) ; 
+            border-top-left-radius: var(--border);
+        }
+
+        .a2 {
+            flex-direction: column;
+            font-size: 26px;
+            padding: 4vw;
+            box-sizing: border-box; 
+            height: 33%;
+        }
+
+        .text {
+            height: 30%;
+            width: 100%;
+        }
+
+        .videos {
+            height: 70%;
+            width: 100%; 
+            display: flex; 
+            justify-content: space-around;
+        }  
+        video{ 
+            object-fit: cover; 
+            border-radius: 50%;
+            width: 20%; 
+            height: 110%;  
+            background-color: rgba(255, 255, 255, 0);
+            transition: 0.5s; 
+            cursor: pointer;
+        } 
+        video:hover{
+            background-color: rgba(255, 255, 255, 0.525); 
+            box-shadow: 0px 0px 20px white;
+        }
+        .a4{
+            border-bottom-right-radius: var(--border) ; 
+            border-bottom-left-radius: var(--border);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="column a1">
+            JS Oficina
+        </div>
+        <div class="column a2">
+            <div class="text">
+                O que você achou do atendimento ?:
+            </div>
+            <div class="videos">
+                <video  loop muted controlsList="nodownload"> <source src="emoji1.webm"></video> 
+                <video  loop muted controlsList="nodownload"> <source src="emoji2.webm"></video> 
+                <video  loop muted controlsList="nodownload"> <source src="emoji3.webm"></video> 
+                <video  loop muted controlsList="nodownload"> <source src="emoji4.webm"></video> 
+                <video loop muted controlsList="nodownload"> <source src="emoji5.webm"></video>
+            </div>
+        </div>
+        <div class="column a3">
+
+        </div>
+        <div class="column a4">
+
+        </div>
+    </div> 
+    <script>
+        let videos = document.querySelectorAll("video")  
+        let intervalo = setInterval(()=>{console.log("oi")}, 2000) 
+        let currentVideo = document.querySelector("video") 
+        videos.forEach((video)=>{
+            video.addEventListener("mouseover", ()=>{
+                video.play()
+            })  
+            video.addEventListener("click", ()=>{   
+                currentVideo.style.backgroundColor="transparent"
+                video.style.backgroundColor="rgba(7, 255, 193, 0.622)" 
+                currentVideo = video
+            }) 
+            video.addEventListener("mouseout", ()=>{
+                video.currentTime=0 
+                video.pause()
+            })
+        })
+    </script>
+</body>
+
+</html>

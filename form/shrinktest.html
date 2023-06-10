@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulário</title>
+	<link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+	<div class="main-container">
+		<div class="column a1">
+			JS Oficina
+
+		</div>
+		<div class="column a2">
+			<div class="text">
+				O que você achou do atendimento ?:
+			</div>
+			<div class="videos">
+				<video class="emj1" loop muted controlsList="nodownload">
+					<source src="emoji1.webm">
+				</video>
+				<video class="emj1" loop muted controlsList="nodownload">
+					<source src="emoji2.webm">
+				</video>
+				<video class="emj1" loop muted controlsList="nodownload">
+					<source src="emoji3.webm">
+				</video>
+				<video class="emj1" loop muted controlsList="nodownload">
+					<source src="emoji4.webm">
+				</video>
+				<video class="emj1" loop muted controlsList="nodownload">
+					<source src="emoji5.webm">
+				</video>
+			</div>
+
+		</div>
+		<div class="column a4">
+			<div class="text">
+				O que você achou do serviço ?:
+			</div>
+			<div class="videos">
+				<video class="emj2" loop muted controlsList="nodownload">
+					<source src="emoji1.webm">
+				</video>
+				<video class="emj2" loop muted controlsList="nodownload">
+					<source src="emoji2.webm">
+				</video>
+				<video class="emj2" loop muted controlsList="nodownload">
+					<source src="emoji3.webm">
+				</video>
+				<video class="emj2" loop muted controlsList="nodownload">
+					<source src="emoji4.webm">
+				</video>
+				<video class="emj2" loop muted controlsList="nodownload">
+					<source src="emoji5.webm">
+				</video>
+			</div>
+		</div>
+		<div class="column a3">
+			<input class="c-checkbox" type="checkbox" id="checkbox">
+			<div class="c-formContainer">
+				<form class="c-form" action="">
+					<input class="c-form__input" placeholder="Email/telefone" type="text"
+						pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required>
+					<label class="c-form__buttonLabel" for="checkbox">
+						<button class="c-form__button" type="button">enviar</button>
+					</label>
+					<label class="c-form__toggle" for="checkbox" data-title="Enviar"></label>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<script>
+		let emjs1 = document.querySelectorAll(".emj1")
+		let emjs2 = document.querySelectorAll(".emj2")
+		let intervalo = setInterval(() => { console.log("oi") }, 2000)
+		let currentVideo1 = document.querySelector(".emj1")
+		let currentVideo2 = document.querySelector(".emj2")
+		emjs1.forEach((video) => {
+			video.addEventListener("mouseover", () => {
+				video.play()
+			})
+			video.addEventListener("click", () => {
+				currentVideo1.style.backgroundColor = ""
+				currentVideo1.style.boxShadow = ""
+				video.style.backgroundColor = "rgba(255, 255, 255, 0.625)"
+				video.style.boxShadow = "0px 0px 20px white"
+				currentVideo1 = video
+			})
+			video.addEventListener("mouseout", () => {
+				video.currentTime = 0
+				video.pause()
+			})
+		})
+		emjs2.forEach((video) => {
+			video.addEventListener("mouseover", () => {
+				video.play()
+			})
+			video.addEventListener("click", () => {
+				currentVideo2.style.backgroundColor = ""
+				currentVideo2.style.boxShadow = ""
+				video.style.backgroundColor = "rgba(255, 255, 255, 0.625)"
+				video.style.boxShadow = "0px 0px 20px white"
+				currentVideo2 = video
+			})
+			video.addEventListener("mouseout", () => {
+				video.currentTime = 0
+				video.pause()
+			})
+		})
+	</script>
+</body>
+
+</html>

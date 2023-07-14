@@ -355,7 +355,7 @@
             if(elogCount<elogios.length-1){elogCount++} 
         } 
         
-        let elogios = ["você é um ótimo professor !"]
+        let elogios = ["Por favor me contrata", "quero esse estágio", "quero muito trabalhar nessa empresa", "preciso de dinheiro"]
             
         let elogCount = 0
             Lbutton.addEventListener("mouseenter", () => {
@@ -473,14 +473,15 @@
             }
 
             pushPrim(max)
-            do {
-               if(numb1!=1&&numb1<=nnow[pcount]){ nnow.push(numb1)} 
-               if(numb1!=1&&numb2<=nnow[pcount]){ nnow.push(numb2)}
+            do { 
+                console.log(nnow[pcount])
+               if(numb1!=1&&numb1>=nnow[pcount]){ nnow.push(numb1)} 
+               if(numb1!=1&&numb2>=nnow[pcount]){ nnow.push(numb2)}
                 if (nnow[pcount] == numb1) {
-                    pushPrim(numb1)
+                    nnow.push(numb1)
                 }
                 if (nnow[pcount] == numb2) {
-                    pushPrim(numb2)
+                    nnow.push(numb2)
                 }
                 if ((numb1 / nnow[pcount]) % 1 == 0 || (numb2 / nnow[pcount]) % 1 == 0) {
                     n.push(nnow[pcount])

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ 
+            background-color: rgba(93, 33, 150, 0.486);
+            } 
+        .container{
+            width: 600px; 
+            height: 600px; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            perspective:500 ;
+        } 
+        .box{
+            position: absolute; 
+            width: 350px; 
+            height: 350px; 
+            transform-style: preserve-3d; 
+            transform: rotateY(20deg) rotateX(10deg); 
+        } 
+        .box div{
+            width: 350px; 
+            height: 350px; 
+            position: absolute; 
+            background-color: black; 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill,minmax(calc(350px/4), 1fr)); 
+            gap: 4px; 
+            padding: 4px; 
+            box-sizing: border-box; 
+        } 
+        .top{
+            bottom: 175px; 
+            transform: rotateX(90deg);
+        } 
+        .bottom{
+            top: 175px; 
+            transform: rotateX(-90deg);
+        } 
+        .left{
+            right: 175px; 
+            transform: rotateY(-90deg);
+        } 
+        .right{
+            left: 175px; 
+            transform: rotateY(90deg);
+        } 
+        .front{
+            transform: translateZ(175px);
+        } 
+        .back{
+            transform: translateZ(-175px);
+        } 
+        .box div span{
+            height:calc(350px / 3 - 6px) ; 
+            background-color: var(--clr); 
+            border-radius: 10px; 
+            position: relative; 
+            z-index: -1; 
+            overflow: hidden;
+        }
+            
+    </style>
+</head>
+<body>  
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <script>
+       let box = document.querySelector(".box")  
+       let container = document.querySelector(`.container`)
+                                                
+       const directions = ['front','back','left','right','top','bottom']  
+       const color = ['rgb(255, 255, 255)','rgb(255, 127, 127)','rgb(0, 255, 174)','rgb(255, 255, 0)','rgb(255, 0, 255)','rgb(75, 120, 255)']
+
+       for(var i of directions){
+        let direction = document.createElement('div') 
+        box.appendChild(direction) 
+        direction.classList.add(i) 
+        direction.setAttribute('style',`--clr:${color[directions.indexOf(i)]}`) 
+
+        for(let j =0; j<9;j++){
+            let span = document.createElement('span') 
+            direction.appendChild(span) 
+        } 
+        document.querySelector(`.${i} span`).setAttribute('style',`--clr:${color[directions.indexOf(i)]}`) 
+       } 
+       container.addEventListener('mousedown',function(e){
+        isKeyDown = true 
+        rotateCube(e.clientX, e.clientY)
+       })   
+       container.addEventListener('mouseup',function(e){
+        isKeyDown = false 
+        rotateCube(e.clientX, e.clientY)
+       })  
+       container.addEventListener('mousemove',function(e){
+        isKeyDown && rotateCube(e.clientX, e.clientY)
+       }) 
+       
+
+       function rotateCube(x,y){
+        let Xvalue = Math.floor(x/2) 
+        let Yvalue = Math.floor(y/2)  
+        box.style.transform = `rotateX(${Yvalue}deg) rotateY(${Xvalue}deg) `
+       }
+    </script>
+</body>
+
+</html>
